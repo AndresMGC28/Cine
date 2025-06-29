@@ -1,0 +1,123 @@
+@mixin empresas{
+    @media (min-width:$media-uno){
+        @content        
+    } 
+}
+@mixin empresados{
+    @media (min-width:$media-dos){
+        @content        
+    } 
+}
+section.seccionempresa{
+    text-align: center;
+    @include empresas(){
+        display:grid;
+        width: 95%;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 30% 30%;
+        grid-template-areas:
+        "quien imagenq"
+        "imagenm mision"
+        "vision imagenv";
+        gap: 60px 20px;
+        padding: 20px;
+        margin:  10px auto;
+        }
+}
+div.emp{
+    color: $colordos;
+    margin: auto;
+    h3{
+        font-size: 1.5rem;
+        line-height: 50px;
+        @include empresas(){
+            font-size: 1.8rem;
+        }   
+        @include empresados(){
+            font-size: 2.2rem;
+        }        
+    }
+    p{
+        @include empresados(){
+            font-size: 1.5rem;
+        } 
+    }   
+}
+article.quienes{
+    width: 75%;
+    background-color:$coloruno;
+    padding: 20px;
+    margin: 25px auto;
+    @include empresas(){
+        width: 100%;
+        height: 320px;
+        padding: 5%;
+        margin: auto;
+        grid-area: quien;
+    }
+} 
+article.mision{
+    width: 75%;
+    background-color:$coloruno;
+    padding: 15px;
+    margin: 20px auto;
+    @include empresas(){
+            width: 100%;
+            height: 320px;
+            padding: 5%;
+            margin: auto;
+            grid-area: mision;
+        }
+    }
+article.vision{
+    width: 75%;
+    background-color:$coloruno;
+    padding: 15px;
+    margin: 20px auto;
+    @include empresas(){
+        width: 100%;
+        height: 320px;
+        padding: 5%;
+        margin: auto;
+        grid-area: vision;
+    }
+}
+article.imagenq{
+    width: 0%;
+    @include empresas(){
+        width: 90%;
+        height: 300px;
+        margin:auto;
+        grid-area: imagenq;
+    }
+}
+article.imagenm{
+    width: 0%;
+    @include empresas(){
+        width: 90%;
+        height: 300px;
+        margin:auto;
+        grid-area: imagenm;
+    }
+}
+article.imagenv{
+    width: 0%;
+    @include empresas(){
+        width: 90%;
+        height: 300px;
+        margin:auto;
+        grid-area: imagenv;
+    }
+}
+//imagenes
+.imagenemp{
+    width: 0%;
+    @include empresas(){
+    width: 100%;
+    height: 300px;
+    }
+    @include empresados(){
+        width: 80%;
+        height: 280px;
+    } 
+}

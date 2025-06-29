@@ -1,0 +1,140 @@
+@mixin grande{
+    @media (min-width: $media-dos){
+        @content        
+    } 
+}
+@mixin medio{
+    @media (min-width:$media-uno){
+        @content        
+    } 
+}
+body{
+    width: 100%;
+    background-color: $coloruno;
+    //background-image: url(../../img/fomdo3.jpg);
+    //background-attachment: fixed;   
+}
+main{  
+    width: 100%;
+    .portada{
+        background-image: url(../../img/fondos/pexels-tima-miroshnichenko-7991579.jpg);
+        background-size: cover;
+        background-position: center;   
+        opacity: .5;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 75px;
+        border-radius: 10px;      
+         @include grande(){
+                   background-attachment: fixed; 
+        } 
+    }
+}
+section{
+    .logouno{
+        width: 45%;
+        margin: auto;
+    }   
+    .pagina{
+        width: 50%;
+        margin: 10px auto;
+        margin-right: 15px;
+        padding: 5px;
+        border-radius: 10px;
+        a{
+            text-decoration: none;
+        }
+        
+        h1,p{
+            text-align: center;
+            font-size: 1.2rem;
+            margin: auto;
+            color: $colordos;
+        text-shadow: 
+            -3px -3px 0 rgb(255, 0, 0),
+            3px -3px 0 rgb(255, 0, 0),
+            -3px  3px 0 rgb(255, 0, 0),
+            2px  3px 0 rgb(255, 0, 0),
+            -3px  3px 0 rgb(255, 0, 0),
+            3px  3px 0 rgb(255, 0, 0),
+            3px -3px 0 rgb(255, 0, 0),
+            3px  3px 0 rgb(255, 0, 0);
+
+            @include grande(){
+                font-size: 4.5rem;
+            }         
+        }
+        
+    }
+}
+.logo{
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+    color: $colorcuatro;
+    padding: 60px;
+    text-align: center  ;
+    margin: auto 20px;
+}
+section{
+    .Estrenos{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;   
+    }
+}
+.card {
+    border: none;
+    background-color:$colorcinco   ;
+    padding: 10px;
+    border-radius: 20px ;
+}
+.movie-card {
+    width: 80%;
+    margin: 15px auto;
+    transition: transform 0.3s ease;
+    @include medio(){
+                width: 48%;
+            } 
+    @include grande(){
+                width: 23%;
+            }  
+}
+
+.imgcine{
+    height: 400px;
+    border-radius: 20px;
+}
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+.texto{
+    margin: auto;
+    padding: 10px;
+
+    h3{
+        
+        text-align: center;
+    }
+    .card-title {
+    color: $colordos;    
+    font-weight: bold;
+        font-size: 1.2rem ;
+    }
+}
+
+
+
+

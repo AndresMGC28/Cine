@@ -1,0 +1,87 @@
+@mixin grande {
+  @media (min-width: $media-dos) {
+    @content;
+  }
+}
+
+@mixin medio {
+  @media (min-width: $media-uno) {
+    @content;
+  }
+}
+
+.mai{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 50px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+
+  .formular {
+    width: 90%;
+    border-radius: 20px;
+    font-size: 1.5rem;
+
+    .btn {
+      background-color: white;
+      margin: 10px 20px;
+      color: black;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: black;
+      color: wheat;
+    }
+
+    div {
+      padding: 10px;
+      font-size: 1.5rem;
+      color: white;
+
+      label {
+        margin: 5px auto;
+      }
+    }
+  }
+
+  .reg {
+    .logore {
+      width: 300px;
+    }
+  }
+
+
+  @include medio {
+    flex-direction: row;
+    justify-content: space-around;
+
+    .formular {
+      width: 60%;
+      font-size: 2rem;
+    }
+
+    .reg {
+      .logore {
+        width: 400px;
+      }
+    }
+  }
+
+  @include grande {
+    padding: 100px;
+
+    .formular {
+      width: 40%;
+    }
+
+    .reg {
+      .logore {
+        width: 500px;
+      }
+    }
+  }
+}

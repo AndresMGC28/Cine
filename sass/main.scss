@@ -1,0 +1,18 @@
+@import './utilities/variables';
+
+@import './base/reset';
+@import './base/tipografia';
+
+@import './layout/footer';
+@import './layout/header';
+@import './layout/navegacion';
+
+
+@import './views/index.scss';
+@import './views/peliculas.scss';
+@import './views/empresa.scss';
+@import './views/comida.scss';
+@import './views/membresia.scss';
+@import './views//asientos.scss';
+@import './views//registro.scss';
+// $ sass --watch  sass/main.scss css/styles.css

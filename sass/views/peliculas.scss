@@ -1,0 +1,153 @@
+@mixin grande{
+    @media (min-width: $media-dos){
+        @content        
+    } 
+}
+@mixin medio{
+    @media (min-width:$media-uno){
+        @content        
+    } 
+}
+
+body{
+    width: 100%;
+    background-color: $coloruno; 
+}
+main{
+    width: 100%;
+    .cineportada{
+        background-image: url(../../img/fondos/asientos.jpg);
+        background-size: cover;
+        background-position: center;   
+        opacity: .5;
+        width: 90%;
+        height: 200px;
+        margin: auto;
+        display: flex;
+        margin-top: 75px;
+        border-radius: 10px;
+        color:$colordos;    
+         @include medio(){ 
+            width: 90%;
+            height: 500px;
+        } 
+    }
+}
+
+.carousel{
+    width: 100%;
+    margin: auto;
+     @include medio(){
+        width: 100%;
+    } 
+    .carousel-inner{
+        width: 100%;
+       @include medio(){
+        width: 100%;
+    }   
+    }
+}
+
+.carousel-item{
+    width: 100%;
+     @include medio(){
+        width: 100%;
+    } 
+    .peli{
+        display: flex;
+        image-rendering: 100%;  
+        img{
+            width: 150px;
+            height: 100px;
+            border-radius: 20px;
+            padding: 10px;
+            margin: auto;
+             @include medio(){
+                width: auto;
+                height: 250px;
+                padding: 10px;
+                margin: auto;
+            }
+            @include grande(){
+                width: auto;
+                height: 400px;
+                padding: 10px;
+                margin: auto;
+            } 
+
+        }
+        h2{
+            padding: 10px;
+            font-size: 1rem;
+            text-align: center;
+            margin: auto;
+            @include medio(){
+                padding: 10px;
+                font-size: 2rem;
+                text-align: center;
+                margin: auto;
+            }
+            @include grande(){
+                padding: 10px;
+                font-size: 4rem;
+                text-align: center;
+                margin: auto;
+    }  
+            
+        }
+    }
+    
+}
+
+div{
+    .peli2{
+        margin: auto;
+        text-align: center;
+        a{
+            color: $colordos;
+            padding: 2px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin: auto;
+            @include medio(){
+                padding: 5px 15px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-size: 1rem;
+                margin: auto;
+            }
+            @include medio(){
+                padding: 5px 55px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-size: 2rem;
+                margin: auto;
+            } 
+            
+        }
+        a:hover{
+            background-color:$colordos;
+            color: $coloruno;
+        }
+    }
+}
+
+
+    .movie-cardd {
+        width: 80%;
+        margin: 25px auto;
+        transition: transform 0.3s ease;
+        @include medio(){
+                    width: 48%;
+                } 
+        @include grande(){
+                    width: 28%;
+                }  
+    }
+
+    .movie-cardd:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.5);
+    }
+

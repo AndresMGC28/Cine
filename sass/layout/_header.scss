@@ -1,0 +1,54 @@
+@mixin nav{
+    @media (min-width: $media-uno){
+        @content        
+    } 
+}
+
+header{
+    
+    width: 100%;
+    div{
+        width: 100%;
+        
+    }
+
+        img{
+        width: 50px;
+        border-radius: 50px;
+        }
+        div{
+            h1{
+                font-size: 1.2rem;
+                
+                @include medio(){
+                font-size: 2rem;
+            }     
+                
+            }
+            li{
+                font-size: 1.2rem;
+                line-height: 2.5;  
+            }
+            li:hover{
+            text-decoration: underline;
+            
+        }
+        span{
+            font-size: 1.5rem;
+        }
+            span:hover{
+                color: $colordos;
+                
+
+            }
+ 
+            .hcss{
+                @include nav{
+                display: flexbox;
+                justify-content: end;
+
+                }
+            }
+        }
+
+}

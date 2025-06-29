@@ -1,0 +1,84 @@
+@mixin grande{
+    @media (min-width: $media-dos){
+        @content        
+    } 
+}
+@mixin medio{
+    @media (min-width:$media-uno){
+        @content        
+    } 
+}
+body{
+    width: 100%;
+    background-color: $coloruno;
+    //background-image: url(../../img/fomdo3.jpg);
+    //background-attachment: fixed;   
+}
+
+
+main{  
+    width: 100%;
+    .portada2{
+        background-image: url(../../img/fondos/palomitas.jpg);
+        background-size: cover;
+        background-position: center;   
+        opacity: .5;
+        width: 100%;
+        height: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 75px;
+        border-radius: 10px;      
+         @include grande(){
+            background-attachment: fixed;
+            height: auto; 
+        } 
+    }
+}
+section{
+    .logodos{
+        width: 45%;
+        margin: auto;
+    }   
+    .paginados{
+        width: 50%;
+        margin: 10px auto;
+        margin-right: 15px;
+        padding: 5px;
+        border-radius: 10px;
+        a{
+            text-decoration: none;
+        }
+        
+        h1,p{
+            text-align: center;
+            font-size: 1.2rem;
+            margin: auto;
+            color: $coloruno;
+        text-shadow: 
+            -3px -3px 0 rgb(255, 255, 255),
+            3px -3px 0 rgb(255, 255, 255),
+            -3px  3px 0 rgb(255, 255, 255),
+            2px  3px 0 rgb(255, 255, 255),
+            -3px  3px 0 rgb(255, 255, 255),
+            3px  3px 0 rgb(255, 255, 255),
+            3px -3px 0 rgb(255, 255, 255),
+            3px  3px 0 rgb(255, 255, 255);
+
+            @include grande(){
+                font-size: 4.5rem;
+            }         
+        }
+        
+    }
+}
+.logo{
+    width: 80%;
+    padding: 10px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
