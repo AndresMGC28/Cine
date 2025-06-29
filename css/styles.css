@@ -1,0 +1,817 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h2, h3, p {
+  font-size: 1rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+a {
+  font-size: 2rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+footer {
+  margin-top: 65px;
+  background-color: rgb(20, 20, 20);
+}
+footer div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  color: white;
+}
+footer div h2 {
+  font-size: 1rem;
+  margin: auto;
+  margin-left: 10px;
+}
+footer div h2 a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+@media (min-width: 750px) {
+  footer div h2 a {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 750px) {
+  footer div h2 {
+    font-size: 1.5rem;
+  }
+}
+footer div img {
+  width: 35px;
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.whatsapp {
+  z-index: 1;
+  width: 50px;
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: auto;
+  bottom: 50px;
+  position: fixed;
+}
+
+.whatsapp:hover {
+  transform: rotatey(320deg);
+  transition: 1s;
+}
+
+header {
+  width: 100%;
+}
+header div {
+  width: 100%;
+}
+header img {
+  width: 50px;
+  border-radius: 50px;
+}
+header div h1 {
+  font-size: 1.2rem;
+}
+@media (min-width: 750px) {
+  header div h1 {
+    font-size: 2rem;
+  }
+}
+header div li {
+  font-size: 1.2rem;
+  line-height: 2.5;
+}
+header div li:hover {
+  text-decoration: underline;
+}
+header div span {
+  font-size: 1.5rem;
+}
+header div span:hover {
+  color: rgb(255, 255, 255);
+}
+@media (min-width: 750px) {
+  header div .hcss {
+    display: flexbox;
+    justify-content: end;
+  }
+}
+
+body {
+  width: 100%;
+  background-color: black;
+}
+
+main {
+  width: 100%;
+}
+main .portada {
+  background-image: url(../../img/fondos/pexels-tima-miroshnichenko-7991579.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 75px;
+  border-radius: 10px;
+}
+@media (min-width: 950px) {
+  main .portada {
+    background-attachment: fixed;
+  }
+}
+
+section .logouno {
+  width: 45%;
+  margin: auto;
+}
+section .pagina {
+  width: 50%;
+  margin: 10px auto;
+  margin-right: 15px;
+  padding: 5px;
+  border-radius: 10px;
+}
+section .pagina a {
+  text-decoration: none;
+}
+section .pagina h1, section .pagina p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  text-shadow: -3px -3px 0 rgb(255, 0, 0), 3px -3px 0 rgb(255, 0, 0), -3px 3px 0 rgb(255, 0, 0), 2px 3px 0 rgb(255, 0, 0), -3px 3px 0 rgb(255, 0, 0), 3px 3px 0 rgb(255, 0, 0), 3px -3px 0 rgb(255, 0, 0), 3px 3px 0 rgb(255, 0, 0);
+}
+@media (min-width: 950px) {
+  section .pagina h1, section .pagina p {
+    font-size: 4.5rem;
+  }
+}
+
+.logo {
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+  color: rgb(99, 14, 14);
+  padding: 60px;
+  text-align: center;
+  margin: auto 20px;
+}
+
+section .Estrenos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  border: none;
+  background-color: rgb(5, 5, 5);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.movie-card {
+  width: 80%;
+  margin: 15px auto;
+  transition: transform 0.3s ease;
+}
+@media (min-width: 750px) {
+  .movie-card {
+    width: 48%;
+  }
+}
+@media (min-width: 950px) {
+  .movie-card {
+    width: 23%;
+  }
+}
+
+.imgcine {
+  height: 400px;
+  border-radius: 20px;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.texto {
+  margin: auto;
+  padding: 10px;
+}
+.texto h3 {
+  text-align: center;
+}
+.texto .card-title {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+body {
+  width: 100%;
+  background-color: black;
+}
+
+main {
+  width: 100%;
+}
+main .cineportada {
+  background-image: url(../../img/fondos/asientos.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  width: 90%;
+  height: 200px;
+  margin: auto;
+  display: flex;
+  margin-top: 75px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+}
+@media (min-width: 750px) {
+  main .cineportada {
+    width: 90%;
+    height: 500px;
+  }
+}
+
+.carousel {
+  width: 100%;
+  margin: auto;
+}
+@media (min-width: 750px) {
+  .carousel {
+    width: 100%;
+  }
+}
+.carousel .carousel-inner {
+  width: 100%;
+}
+@media (min-width: 750px) {
+  .carousel .carousel-inner {
+    width: 100%;
+  }
+}
+
+.carousel-item {
+  width: 100%;
+}
+@media (min-width: 750px) {
+  .carousel-item {
+    width: 100%;
+  }
+}
+.carousel-item .peli {
+  display: flex;
+  image-rendering: 100%;
+}
+.carousel-item .peli img {
+  width: 150px;
+  height: 100px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: auto;
+}
+@media (min-width: 750px) {
+  .carousel-item .peli img {
+    width: auto;
+    height: 250px;
+    padding: 10px;
+    margin: auto;
+  }
+}
+@media (min-width: 950px) {
+  .carousel-item .peli img {
+    width: auto;
+    height: 400px;
+    padding: 10px;
+    margin: auto;
+  }
+}
+.carousel-item .peli h2 {
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+  margin: auto;
+}
+@media (min-width: 750px) {
+  .carousel-item .peli h2 {
+    padding: 10px;
+    font-size: 2rem;
+    text-align: center;
+    margin: auto;
+  }
+}
+@media (min-width: 950px) {
+  .carousel-item .peli h2 {
+    padding: 10px;
+    font-size: 4rem;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+div .peli2 {
+  margin: auto;
+  text-align: center;
+}
+div .peli2 a {
+  color: rgb(255, 255, 255);
+  padding: 2px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: auto;
+}
+@media (min-width: 750px) {
+  div .peli2 a {
+    padding: 5px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: auto;
+  }
+}
+@media (min-width: 750px) {
+  div .peli2 a {
+    padding: 5px 55px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: auto;
+  }
+}
+div .peli2 a:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.movie-cardd {
+  width: 80%;
+  margin: 25px auto;
+  transition: transform 0.3s ease;
+}
+@media (min-width: 750px) {
+  .movie-cardd {
+    width: 48%;
+  }
+}
+@media (min-width: 950px) {
+  .movie-cardd {
+    width: 28%;
+  }
+}
+
+.movie-cardd:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.5);
+}
+
+section.seccionempresa {
+  text-align: center;
+}
+@media (min-width: 750px) {
+  section.seccionempresa {
+    display: grid;
+    width: 95%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 30% 30%;
+    grid-template-areas: "quien imagenq" "imagenm mision" "vision imagenv";
+    gap: 60px 20px;
+    padding: 20px;
+    margin: 10px auto;
+  }
+}
+
+div.emp {
+  color: rgb(255, 255, 255);
+  margin: auto;
+}
+div.emp h3 {
+  font-size: 1.5rem;
+  line-height: 50px;
+}
+@media (min-width: 750px) {
+  div.emp h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 950px) {
+  div.emp h3 {
+    font-size: 2.2rem;
+  }
+}
+@media (min-width: 950px) {
+  div.emp p {
+    font-size: 1.5rem;
+  }
+}
+
+article.quienes {
+  width: 75%;
+  background-color: black;
+  padding: 20px;
+  margin: 25px auto;
+}
+@media (min-width: 750px) {
+  article.quienes {
+    width: 100%;
+    height: 320px;
+    padding: 5%;
+    margin: auto;
+    grid-area: quien;
+  }
+}
+
+article.mision {
+  width: 75%;
+  background-color: black;
+  padding: 15px;
+  margin: 20px auto;
+}
+@media (min-width: 750px) {
+  article.mision {
+    width: 100%;
+    height: 320px;
+    padding: 5%;
+    margin: auto;
+    grid-area: mision;
+  }
+}
+
+article.vision {
+  width: 75%;
+  background-color: black;
+  padding: 15px;
+  margin: 20px auto;
+}
+@media (min-width: 750px) {
+  article.vision {
+    width: 100%;
+    height: 320px;
+    padding: 5%;
+    margin: auto;
+    grid-area: vision;
+  }
+}
+
+article.imagenq {
+  width: 0%;
+}
+@media (min-width: 750px) {
+  article.imagenq {
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    grid-area: imagenq;
+  }
+}
+
+article.imagenm {
+  width: 0%;
+}
+@media (min-width: 750px) {
+  article.imagenm {
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    grid-area: imagenm;
+  }
+}
+
+article.imagenv {
+  width: 0%;
+}
+@media (min-width: 750px) {
+  article.imagenv {
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    grid-area: imagenv;
+  }
+}
+
+.imagenemp {
+  width: 0%;
+}
+@media (min-width: 750px) {
+  .imagenemp {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media (min-width: 950px) {
+  .imagenemp {
+    width: 80%;
+    height: 280px;
+  }
+}
+
+body {
+  width: 100%;
+  background-color: black;
+}
+
+main {
+  width: 100%;
+}
+main .portada2 {
+  background-image: url(../../img/fondos/palomitas.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 75px;
+  border-radius: 10px;
+}
+@media (min-width: 950px) {
+  main .portada2 {
+    background-attachment: fixed;
+    height: auto;
+  }
+}
+
+section .logodos {
+  width: 45%;
+  margin: auto;
+}
+section .paginados {
+  width: 50%;
+  margin: 10px auto;
+  margin-right: 15px;
+  padding: 5px;
+  border-radius: 10px;
+}
+section .paginados a {
+  text-decoration: none;
+}
+section .paginados h1, section .paginados p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: auto;
+  color: black;
+  text-shadow: -3px -3px 0 rgb(255, 255, 255), 3px -3px 0 rgb(255, 255, 255), -3px 3px 0 rgb(255, 255, 255), 2px 3px 0 rgb(255, 255, 255), -3px 3px 0 rgb(255, 255, 255), 3px 3px 0 rgb(255, 255, 255), 3px -3px 0 rgb(255, 255, 255), 3px 3px 0 rgb(255, 255, 255);
+}
+@media (min-width: 950px) {
+  section .paginados h1, section .paginados p {
+    font-size: 4.5rem;
+  }
+}
+
+.logo {
+  width: 80%;
+  padding: 10px;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  width: 100%;
+  background-color: black;
+}
+
+main {
+  width: 100%;
+}
+main .portada3 {
+  background-image: url(../../img/fondos/membresia.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 75px;
+  border-radius: 10px;
+}
+@media (min-width: 950px) {
+  main .portada3 {
+    background-attachment: fixed;
+    height: auto;
+  }
+}
+
+section .logodos {
+  width: 45%;
+  margin: auto;
+}
+section .paginatres {
+  width: 50%;
+  margin: 10px auto;
+  margin-right: 15px;
+  padding: 5px;
+  border-radius: 10px;
+}
+section .paginatres a {
+  text-decoration: none;
+}
+section .paginatres h1, section .paginatres p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  text-shadow: -3px -3px 0 rgb(0, 0, 0), 3px -3px 0 rgb(0, 0, 0), -3px 3px 0 rgb(0, 0, 0), 2px 3px 0 rgb(0, 0, 0), -3px 3px 0 rgb(0, 0, 0), 3px 3px 0 rgb(0, 0, 0), 3px -3px 0 rgb(0, 0, 0), 3px 3px 0 rgb(0, 0, 0);
+}
+@media (min-width: 950px) {
+  section .paginatres h1, section .paginatres p {
+    font-size: 3.5rem;
+  }
+}
+
+.logo {
+  width: 80%;
+  padding: 10px;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movie-cardm {
+  width: 80%;
+  margin: 25px auto;
+  transition: transform 0.3s ease;
+}
+@media (min-width: 750px) {
+  .movie-cardm {
+    width: 48%;
+  }
+}
+@media (min-width: 950px) {
+  .movie-cardm {
+    width: 28%;
+  }
+}
+
+.movie-cardm:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(151, 0, 0, 0.8);
+}
+
+body {
+  width: 100%;
+  background-color: black;
+}
+
+main {
+  width: 100%;
+}
+main .portada4 {
+  background-image: url(../img/fondos/asientosrojos.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 75px;
+  border-radius: 10px;
+}
+@media (min-width: 950px) {
+  main .portada4 {
+    background-attachment: fixed;
+    height: auto;
+  }
+}
+
+section .logotres {
+  width: 45%;
+  margin: auto;
+}
+section .paginatres {
+  width: 50%;
+  margin: 10px auto;
+  margin-right: 15px;
+  padding: 5px;
+  border-radius: 10px;
+}
+section .paginatres a {
+  text-decoration: none;
+}
+section .paginatres h1, section .paginatres p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: auto;
+  color: black;
+  text-shadow: -3px -3px 0 rgb(255, 255, 255), 3px -3px 0 rgb(255, 255, 255), -3px 3px 0 rgb(255, 255, 255), 2px 3px 0 rgb(255, 255, 255), -3px 3px 0 rgb(255, 255, 255), 3px 3px 0 rgb(255, 255, 255), 3px -3px 0 rgb(255, 255, 255), 3px 3px 0 rgb(255, 255, 255);
+}
+@media (min-width: 950px) {
+  section .paginatres h1, section .paginatres p {
+    font-size: 4.5rem;
+  }
+}
+
+.logo {
+  width: 80%;
+  padding: 10px;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mai {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 50px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.mai .formular {
+  width: 90%;
+  border-radius: 20px;
+  font-size: 1.5rem;
+}
+.mai .formular .btn {
+  background-color: white;
+  margin: 10px 20px;
+  color: black;
+  text-decoration: none;
+}
+.mai .formular .btn:hover {
+  background-color: black;
+  color: wheat;
+}
+.mai .formular div {
+  padding: 10px;
+  font-size: 1.5rem;
+  color: white;
+}
+.mai .formular div label {
+  margin: 5px auto;
+}
+.mai .reg .logore {
+  width: 300px;
+}
+@media (min-width: 750px) {
+  .mai {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .mai .formular {
+    width: 60%;
+    font-size: 2rem;
+  }
+  .mai .reg .logore {
+    width: 400px;
+  }
+}
+@media (min-width: 950px) {
+  .mai {
+    padding: 100px;
+  }
+  .mai .formular {
+    width: 40%;
+  }
+  .mai .reg .logore {
+    width: 500px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

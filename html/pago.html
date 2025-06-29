@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - El Cine del Perro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #141414; font-family: 'Roboto', sans-serif; }
+        .logo-text { font-family: 'Anton', sans-serif; color: #d32f2f; }
+        .summary-column { background-color: #1f1f1f; }
+        .payment-method-tabs .nav-link {
+            cursor: pointer;
+            color: #888;
+        }
+        .payment-method-tabs .nav-link.active {
+            color: #fff;
+            background-color: #d32f2f !important;
+            border-color: #d32f2f !important;
+        }
+        .card-logos img {
+            height: 25px;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+        .card-logos img.active {
+            opacity: 1;
+        }
+        .modal-qr-code {
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="text-light">
+    <header>
+                 <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <img src="../img/logo_cine_pero.jpg" alt="logo">
+                <a class="navbar-brand" href="./index.html">El Cine del Perro</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+
+
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">El Cine del Perro</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../index.html">Incio</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../html/perfil.html">Perfil</a>
+                    </li> 
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../index.html">Películas</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../html/membresia.html">Membrecia</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Preventas</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Comida</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Registro</a>
+                    </li>
+      
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="container my-5">
+        <div class="row g-0 shadow-lg rounded overflow-hidden" style="animation: fadeIn 1s;">
+            <div class="col-lg-5 summary-column p-4 p-md-5">
+                <div class="text-center mb-4">
+                    <img src="../img/logo_cine_perro.jpg" alt="Logo" class="rounded-circle mb-3" width="100">
+                    <h2 class="logo-text">El Cine del Perro</h2>
+                </div>
+                <h4 class="mb-3 border-bottom border-danger pb-2">RESUMEN DE COMPRA</h4>
+                <ul id="summary-list" class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent text-light d-flex justify-content-between"><span>Película:</span> <strong id="summary-movie"></strong></li>
+                    <li class="list-group-item bg-transparent text-light d-flex justify-content-between"><span>Asientos:</span> <strong id="summary-seats"></strong></li>
+                    <li id="summary-tickets" class="list-group-item bg-transparent text-light d-flex justify-content-between"></li>
+                    </ul>
+                <hr class="border-secondary">
+                <div class="d-flex justify-content-between h4">
+                    <span>Total:</span>
+                    <strong id="summary-total" class="text-danger"></strong>
+                </div>
+            </div>
+
+            <div class="col-lg-7 bg-dark p-4 p-md-5">
+                <h3 class="mb-4">Elige tu Método de Pago</h3>
+                
+                <ul class="nav nav-tabs nav-fill mb-4 payment-method-tabs" id="payment-tabs" role="tablist">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" id="tab-card" data-bs-toggle="tab" data-bs-target="#content-card" role="tab">Tarjeta</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" id="tab-paypal" data-bs-toggle="tab" data-bs-target="#content-paypal" role="tab">PayPal</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" id="tab-others" data-bs-toggle="tab" data-bs-target="#content-others" role="tab">Otros</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="content-card" role="tabpanel">
+                        <form id="payment-form" novalidate>
+                            <div class="d-flex justify-content-end mb-3 card-logos">
+                                <img id="logo-visa" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="me-2">
+                                <img id="logo-mastercard" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+                            </div>
+                            <div class="mb-3"><label for="card-number" class="form-label">Número de la tarjeta</label><input type="text" class="form-control bg-secondary text-light border-0" id="card-number" required oninput="detectCardType()"></div>
+                            <div class="mb-3"><label for="card-name" class="form-label">Nombre en la tarjeta</label><input type="text" class="form-control bg-secondary text-light border-0" id="card-name" required></div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3"><label for="expiry-date" class="form-label">Vencimiento</label><input type="text" class="form-control bg-secondary text-light border-0" id="expiry-date" required placeholder="MM/AA"></div>
+                                <div class="col-md-6 mb-3"><label for="cvv" class="form-label">CVV</label><input type="text" class="form-control bg-secondary text-light border-0" id="cvv" required placeholder="123"></div>
+                            </div>
+                            <div class="d-grid"><button type="submit" class="btn btn-danger btn-lg mt-3"><i class="bi bi-lock-fill"></i> Pagar de Forma Segura</button></div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade text-center" id="content-paypal" role="tabpanel">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo" style="height: 40px;" class="my-4">
+                        <p>Serás redirigido a PayPal para completar tu pago de forma segura.</p>
+                        <div class="d-grid"><button class="btn btn-primary btn-lg" style="background-color: #0070ba;"><i class="bi bi-paypal"></i> Pagar con PayPal</button></div>
+                    </div>
+
+                    <div class="tab-pane fade text-center" id="content-others" role="tabpanel">
+                        <p>Selecciona una opción para generar tu orden de pago.</p>
+                        <div class="d-grid gap-3">
+                            <button class="btn btn-light btn-lg d-flex align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Oxxo_Logo.svg/1200px-Oxxo_Logo.svg.png" style="height: 25px;" class="me-3"> Pagar en OXXO</button>
+                            <button class="btn btn-light btn-lg d-flex align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Alipay_logo.svg/2560px-Alipay_logo.svg.png" style="height: 25px;" class="me-3"> Pagar con Alipay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="success-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header border-0"><h5 class="modal-title text-success">¡Compra Exitosa!</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body text-center p-4">
+                    <p>Usa este código QR en el cine para reclamar tus boletos y combos.</p>
+                    <div class="d-flex justify-content-center my-3">
+                        <div class="modal-qr-code">
+                            <img id="ticket-qr-code" src="" alt="Tu boleto QR">
+                        </div>
+                    </div>
+                    <p class="small text-muted" id="qr-data-text"></p>
+                </div>
+                <div class="modal-footer border-0"><a href="index.html" class="btn btn-outline-danger">Volver al Inicio</a></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const successModal = new bootstrap.Modal(document.getElementById('success-modal'));
+        let currentPurchaseData = {};
+
+        window.onload = function() {
+            const data = localStorage.getItem('compra');
+            if (!data) { document.body.innerHTML = '<div class="container text-center mt-5"><h1>No hay ninguna compra en proceso. Por favor, <a href="index.html" class="text-danger">regresa a la cartelera</a>.</h1></div>'; return; }
+            currentPurchaseData = JSON.parse(data);
+            
+            let ticketsTotal = (currentPurchaseData.seats.length * 110.00);
+            let combosTotal = 0;
+            let combosHtml = '';
+
+            if (currentPurchaseData.combos && currentPurchaseData.combos.length > 0) {
+                currentPurchaseData.combos.forEach(combo => {
+                    combosTotal += combo.price * combo.quantity;
+                    combosHtml += `<li class="list-group-item bg-transparent text-light d-flex justify-content-between"><span>${combo.name} x${combo.quantity}</span> <strong>$${(combo.price * combo.quantity).toFixed(2)}</strong></li>`;
+                });
+            }
+            const grandTotal = ticketsTotal + combosTotal;
+            currentPurchaseData.total = grandTotal;
+
+            document.getElementById('summary-movie').innerText = currentPurchaseData.title;
+            document.getElementById('summary-seats').innerText = currentPurchaseData.seats.join(', ');
+            document.getElementById('summary-tickets').innerHTML = `<span>Boletos (${currentPurchaseData.seats.length})</span> <strong>$${ticketsTotal.toFixed(2)}</strong>`;
+            if (combosHtml) { document.getElementById('summary-tickets').insertAdjacentHTML('afterend', combosHtml); }
+            document.getElementById('summary-total').innerText = `$${grandTotal.toFixed(2)}`;
+        };
+
+        function detectCardType() {
+            const cardNumber = document.getElementById('card-number').value;
+            const visaLogo = document.getElementById('logo-visa');
+            const mastercardLogo = document.getElementById('logo-mastercard');
+            
+            // Regex para Visa (empieza con 4) y Mastercard (empieza con 51-55)
+            const visaRegex = /^4/;
+            const mastercardRegex = /^5[1-5]/;
+
+            visaLogo.classList.remove('active');
+            mastercardLogo.classList.remove('active');
+
+            if (visaRegex.test(cardNumber)) {
+                visaLogo.classList.add('active');
+            } else if (mastercardRegex.test(cardNumber)) {
+                mastercardLogo.classList.add('active');
+            }
+        }
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (!this.checkValidity()) { event.stopPropagation(); this.classList.add('was-validated'); return; }
+            
+            // Simular procesamiento
+            setTimeout(() => { handleSuccessfulPayment(); }, 1500);
+        });
+
+        function handleSuccessfulPayment() {
+            // 1. Preparar los datos para el QR
+            const today = new Date();
+            const dateStr = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
+            
+            let qrText = `Boleto - El Cine del Perro\n`;
+            qrText += `Película: ${currentPurchaseData.title}\n`;
+            qrText += `Asientos: ${currentPurchaseData.seats.join(', ')}\n`;
+            qrText += `Total Pagado: $${currentPurchaseData.total.toFixed(2)}\n`;
+            qrText += `Fecha: ${dateStr}`;
+
+            document.getElementById('qr-data-text').innerText = qrText;
+            
+            // 2. Codificar los datos para la URL de la API
+            const encodedQrText = encodeURIComponent(qrText);
+            
+            // 3. Generar la URL de la API del QR
+            // Usamos api.qrserver.com, es una API gratuita y sin registro
+            const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodedQrText}`;
+            
+            // 4. Asignar la URL al <img> del modal
+            document.getElementById('ticket-qr-code').src = qrApiUrl;
+            
+            // 5. Mostrar el modal de éxito
+            successModal.show();
+            
+            // 6. Limpiar el almacenamiento local
+            localStorage.clear();
+        }
+    </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

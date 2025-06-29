@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Asientos y Combos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        body { background-color: #141414; }
+        .seat { background-color: #444; height: 25px; width: 30px; margin: 5px; border-radius: 5px; cursor: pointer; transition: all 0.2s; }
+        .seat.selected { background-color: #0dcaf0; transform: scale(1.2); }
+        .seat.occupied { background-color: #6c757d; cursor: not-allowed; }
+        .screen { height: 10px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 20px #fff; }
+        #total-container { position: sticky; bottom: 0; z-index: 1000; transition: transform 0.3s; }
+        .price-update { animation: flash 0.5s ease; }
+        @keyframes flash { 0% { color: #fff; } 50% { color: #0dcaf0; } 100% { color: #fff; } }
+    </style>
+
+    
+</head>
+<body class="text-light">
+    <header>
+         <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <img src="../img/logo_cine_perro.jpg" alt="logo">
+                <a class="navbar-brand" href="../index.html"><h1>El Cine Perron</h1></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+
+
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">El Cine del Perro</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../index.html"><span>Incio</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../html/peliculas.html"><span>Películas</span></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="../html/comida.html"><span>Comida</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../html/perfil.html"><span>Perfil</span></a>
+                    </li> 
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../html/membresia.html"><span>Membrecia</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><span>Registro</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="../html/nosotros.html"><span>Empresa</span></a>
+                    </li>
+      
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
+    </header>
+
+    <main>
+
+        <section class="portada4">
+        
+            <div class="logodos">
+              <img src="../img/boletos1.png" alt="Logo de la Empresa" class="logo">
+            </div>
+
+            <div class="paginatres">
+                <a href="#combo"><h1 class="mensajep">Seleciona Tus Asientos y Disfruta de tu Película</h1></a>
+            </div>           
+        </section>
+
+        <h2 id="combo"  class="section-title mb-4">Asientos</h2>
+        <div class="container my-5">
+            <h2 class="text-center text-danger mb-4" style="font-family: 'Anton', sans-serif;">Selecciona Tus Asientos</h2>
+            <div class="bg-dark p-4 rounded shadow-lg">
+                <div class="screen w-50 mx-auto my-4"></div>
+                <div class="d-flex flex-wrap justify-content-center" id="seats-container"></div>
+            </div>
+
+            <h2 class="text-center text-danger my-4" style="font-family: 'Anton', sans-serif;">2. Añade Tu Combo <h2>
+            <div class="row gy-4" id="combos-container">
+                </div>
+        </div>
+
+        <div id="total-container" class="bg-dark border-top border-danger border-3 p-3">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-0">Boletos: <span id="tickets-total">$0.00</span></p>
+                        <p class="mb-0">Combos: <span id="combos-total">$0.00</span></p>
+                        <h4 class="mb-0">TOTAL: <span id="grand-total" class="text-danger fw-bold">$0.00</span></h4>
+                    </div>
+                    <button class="btn btn-danger btn-lg" onclick="goToPayment()">Continuar al Pago</button>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <div>
+              <h2>El Ciene Perron</h2>
+              <h2><a href="https://andresmgc28.github.io/wnt/index.html">Created by White Night Tech</a> </h2>
+              <div>
+                <a href="https://www.instagram.com/"><img src="../img/instagram.png" alt=""></a>
+                <a href="https://api.whatsapp.com/send?phone=525542275376"><img src="../img/wh1.png" alt="" class="whatsapp"></a>
+
+              </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const TICKET_PRICE = 110.00;
+        const combos = [
+            { id: 1, name: "Combo Callejero", price: 250.00, desc: "1 Palomitas <br> 1 Papas <br> 1 Hamburgesa <br>  1 Refresco"  },
+
+            { id: 2, name: "Combo Pedigri", price: 280.00, desc: "1 Palomitas <br> 2 Papas <br> 2 Hamburgesa <br>  2 Refresco, 3 Helados", img: "https://via.placeholder.com/150/FFC300/FFFFFF?text=Nachos" },
+            
+            { id: 3, name: "Combo Jauria", price: 290.00, desc: "2 Palomitas <br> 2 Papas <br> 2 Nachos <br>  2 Refresco <br> 1 Pizza", img: "https://via.placeholder.com/150/C70039/FFFFFF?text=HotDog" },
+        ];
+        let selectedSeats = new Set();
+        let selectedCombos = {};
+
+        // INICIALIZACIÓN
+        window.onload = () => {
+            generateSeats();
+            generateCombos();
+            updateTotals();
+        };
+
+        function generateSeats() {
+            const container = document.getElementById('seats-container');
+            for (let i = 0; i < 40; i++) {
+                const seat = document.createElement('div');
+                seat.className = 'seat m-1';
+                seat.dataset.id = i + 1;
+                if (Math.random() > 0.8) seat.classList.add('occupied');
+                seat.onclick = () => toggleSeat(seat);
+                container.appendChild(seat);
+            }
+        }
+
+        function generateCombos() {
+            const container = document.getElementById('combos-container');
+            combos.forEach(combo => {
+                const comboCol = document.createElement('div');
+                comboCol.className = 'col-md-4';
+                comboCol.innerHTML = `
+                    <div class="card bg-dark text-light h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-danger">${combo.name}</h5>
+                            <p class="card-text small">${combo.desc}</p>
+                            <p class="h4">$${combo.price.toFixed(2)}</p>
+                            <div class="d-flex justify-content-center align-items-center mt-3">
+                                <button class="btn btn-secondary btn-sm" onclick="changeComboQuantity(${combo.id}, -1)">-</button>
+                                <span id="combo-qty-${combo.id}" class="mx-3 fw-bold">0</span>
+                                <button class="btn btn-danger btn-sm" onclick="changeComboQuantity(${combo.id}, 1)">+</button>
+                            </div>
+                        </div>
+                    </div>`;
+                container.appendChild(comboCol);
+                selectedCombos[combo.id] = 0;
+            });
+        }
+        
+        function toggleSeat(seat) {
+            if (seat.classList.contains('occupied')) return;
+            const seatId = seat.dataset.id;
+            if (selectedSeats.has(seatId)) {
+                selectedSeats.delete(seatId);
+                seat.classList.remove('selected');
+            } else {
+                selectedSeats.add(seatId);
+                seat.classList.add('selected');
+            }
+            updateTotals();
+        }
+
+        function changeComboQuantity(comboId, change) {
+            if (selectedCombos[comboId] + change >= 0) {
+                selectedCombos[comboId] += change;
+                document.getElementById(`combo-qty-${comboId}`).innerText = selectedCombos[comboId];
+                updateTotals();
+            }
+        }
+
+        function updateTotals() {
+            const ticketsTotal = selectedSeats.size * TICKET_PRICE;
+            let combosTotal = 0;
+            for (const comboId in selectedCombos) {
+                const combo = combos.find(c => c.id == comboId);
+                combosTotal += selectedCombos[comboId] * combo.price;
+            }
+            const grandTotal = ticketsTotal + combosTotal;
+            
+            document.getElementById('tickets-total').innerText = `$${ticketsTotal.toFixed(2)}`;
+            document.getElementById('combos-total').innerText = `$${combosTotal.toFixed(2)}`;
+            const grandTotalEl = document.getElementById('grand-total');
+            grandTotalEl.innerText = `$${grandTotal.toFixed(2)}`;
+            grandTotalEl.classList.add('price-update');
+            setTimeout(() => grandTotalEl.classList.remove('price-update'), 500);
+        }
+
+        function goToPayment() {
+            if (selectedSeats.size === 0) {
+                alert('¡Debes seleccionar al menos un asiento!');
+                return;
+            }
+            const compra = JSON.parse(localStorage.getItem('compra')) || {};
+            compra.seats = Array.from(selectedSeats);
+            compra.combos = Object.entries(selectedCombos)
+                .filter(([id, qty]) => qty > 0)
+                .map(([id, qty]) => ({ ...combos.find(c => c.id == id), quantity: qty }));
+            localStorage.setItem('compra', JSON.stringify(compra));
+            window.location.href = 'pago.html';
+        }
+    </script>
+</body>
+</html>
